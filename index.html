@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Project</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/97029a8fda.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <style>
+    h3 {
+        font-weight: bold;
+        font-size: 48px;
+    }
+
+    body {
+        background-color: #333; /* Set a dark background color */
+        color: #fff;
+        font-family: 'Quicksand';
+    }
+
+    #search {
+        width: 250px; /* Adjust the width as needed */
+        padding: 0.5rem; /* Add padding for better aesthetics */
+        font-size: 1rem; /* Adjust font size as needed */
+        border-radius: 100px;
+    }
+
+/* Container styling */
+.overlay-container {
+            display: flex;
+            flex-direction: column; /* Display boxes in a column */
+            align-items: center; /* Center boxes horizontally */
+            margin: 20px; /* Adjust margin as needed */
+        }
+
+        /* Box styling */
+        .overlay-box {
+            position: relative;
+            width: 100%; /* Fill the width of the container */
+            margin-bottom: 20px; /* Adjust margin between boxes */
+            padding: 20px; /* Adjust padding as needed */
+            border-radius: 15px; /* Rounded corners */
+            overflow: hidden;
+            box-sizing: border-box; /* Include padding in the width calculation */
+        }
+
+        /* Text styling */
+        .overlay-title {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff; /* Text color */
+            text-align: center; /* Center the text */
+        }
+
+        .overlay-text {
+            font-size: 17px;
+            color: #fff; /* Text color */
+            text-align: center; /* Center the text */
+        }
+
+        /* Box colors */
+        .box-1 { background-color: #3498db; }
+        .box-2 { background-color: #e74c3c; }
+        .box-3 { background-color: #2ecc71; }
+        .box-4 { background-color: #f39c12; }
+
+/* Container styling */
+.new-box-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Box styling */
+.new-clickable-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-decoration: none; /* Remove default link styling */
+    color: rgb(0, 255, 21); /* Text color */
+    transition: background-color 0.3s linear; /* Updated to linear for zoom effect */
+    box-sizing: border-box; /* Include padding and border in the total width */
+    position: relative;
+}
+
+/* Image styling */
+.new-box-image {
+    width: 50px; /* Adjust image width as needed */
+    height: 50px; /* Adjust image height as needed */
+    margin-right: 15px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Hover effect */
+.new-clickable-box:hover {
+    background-color: #e74c3c; /* Change background color on hover */
+    color: rgb(113, 255, 125); /* Change text color on hover */
+}
+
+/* Background images for each box */
+.new-clickable-box:nth-child(1) {
+    background-image: url('images/productsample.png');
+    width:100%;
+    height: auto;
+}
+
+.new-clickable-box:nth-child(2) {
+    background-image: url('images/aboutussample.png');
+    width:100%;
+    height: auto;
+}
+
+.new-clickable-box:nth-child(3) {
+    background-image: url('images/contactussample.png');
+    width:100%;
+    height: auto;
+}
+
+    </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var pi4Box = document.getElementById('pi4-box');
+        var pi5Box = document.getElementById('pi5-box');
+        var arduinoBox = document.getElementById('arduino-box');
+
+        document.getElementById('pi4-tab').addEventListener('click', function () {
+            pi4Box.style.display = 'block';
+            pi5Box.style.display = 'none';
+            arduinoBox.style.display = 'none';
+        });
+
+        document.getElementById('pi5-tab').addEventListener('click', function () {
+            pi4Box.style.display = 'none';
+            pi5Box.style.display = 'block';
+            arduinoBox.style.display = 'none';
+        });
+
+        document.getElementById('arduino-tab').addEventListener('click', function () {
+            pi4Box.style.display = 'none';
+            pi5Box.style.display = 'none';
+            arduinoBox.style.display = 'block';
+        });
+    });
+</script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">
+            <img class="logo" src="images/adafruit_blue.jpg" alt="Home button" style="width: fit-content; height: 50px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="product.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactus.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="7000">
+        <div class="carousel-inner" id="product-grid" style="font-family: Quicksand;">
+            <div class="carousel-item active">
+                <a href="product.html">
+                    <img src="images/main_page_carousel/ard3.png" style="height:100%;" alt="Arduino Uno">
+                    <div class="carousel-caption" style="text-align: right;">
+                        <h3>Arduino Uno</h3>
+                        <p>
+                            Unleash your creativity with Arduino Uno. Build interactive projects and bring your ideas to life.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="carousel-item">
+                <a href="product.html">
+                    <img src="images/main_page_carousel/rsbp5.png" alt="Raspberry Pi" style="height:100%;">
+                    <div class= "carousel-caption" style="text-align: right;">
+                        <h3>Raspberry Pi</h3>
+                        <p>
+                            Discover endless possibilities with Raspberry Pi. Create, learn, and tinker with this powerful device.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="product.html">
+                    <img src="images/main_page_carousel/esp32.png" alt="ESP32" style="height:100%;">
+                    <div class="carousel-caption" style="text-align: right;">
+                        <h3>ESP32</h3>
+                        <p>
+                            Elevate your IoT projects with ESP32. Connect and control devices from anywhere.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Manually handle carousel controls -->
+        <a class="carousel-control-prev" href="javascript:void(0);" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="javascript:void(0);" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="overlay-container">
+        <div class="overlay-box box-1">
+            <div class="overlay-title">ADAFRUIT</div>
+            <div class="overlay-text">Adafruit is a company dedicated to creating fun and innovative electronics. Our products and resources help makers, educators, and inventors bring their projects to life. With a wide range of components, tutorials, and community support, Adafruit is your go-to destination for all things electronics.</div>
+        </div>
+
+        <div class="overlay-box box-2">
+            <div class="overlay-title">Our Mission</div>
+            <div class="overlay-text">Welcome to Adafruit - Where Innovation Meets Imagination!
+
+                At Adafruit, our mission is to empower makers, creators, and innovators around the world. We believe in the boundless potential of technology to bring ideas to life and foster a community of dreamers and doers. From electronics enthusiasts to DIY hobbyists, we're here to provide the tools, knowledge, and inspiration needed to turn imagination into reality.
+                
+                Our commitment extends beyond delivering high-quality products. We strive to create an inclusive and collaborative environment where everyone, regardless of skill level, can explore, learn, and build. Join us on this exciting journey of discovery as we pave the way for a future shaped by innovation and creativity.</div>
+        </div>
+
+        <div class="overlay-box box-3">
+            <div class="overlay-title">Get in Touch</div>
+            <div class="overlay-text">Have a question, need assistance, or just want to say hello? We'd love to hear from you!
+
+                Feel free to reach out to us via the following channels:
+                
+                <br>Visit Us:
+                Stop by our physical location at ITE College Central, 2 Ang Mo Kio Dr, Singapore 567720. Explore our showroom and meet our knowledgeable staff.
+                
+                <br>Call Us:
+                Give us a ring at (+65) 9876 5432. Our friendly team is ready to assist you with any inquiries you may have.
+                
+                <br>Email Us:
+                Have a detailed inquiry or prefer written communication? Shoot us an email at ITE_business@gmail.com, and we'll get back to you promptly.
+                
+                <br>Connect on Social Media:
+                Stay updated on the latest Adafruit news, products, and projects by following us on Instagram, Twitter, and Facebook. Join our vibrant online community!
+                
+                <br>Whether you're a seasoned maker or just starting your journey into the world of electronics, Adafruit is here to support and inspire you. Let's create something amazing together!
+                
+                <br>Feel free to tailor these texts to better suit your website's tone and style.</div>
+        </div>
+
+    </div>
+
+    <div class="new-box-container">
+        <a href="product.html" class="new-clickable-box">
+            <div>
+                <h3>Products</h3>
+                <p>Discover our latest arrivals.</p>
+            </div>
+        </a>
+
+        <a href="aboutus.html" class="new-clickable-box">
+            <div>
+                <h3>About Us</h3>
+                <p>Learn about our exciting journey.</p>
+            </div>
+        </a>
+
+        <a href="contactus.html" class="new-clickable-box">
+            <div>
+                <h3>Contact Us</h3>
+                <p>Reach out to us for any inquiries.</p>
+            </div>
+        </a>
+    </div>
+    
+
+    <div class="user-box">
+        <img src="images/user_img1.jpg" alt="image user 1">
+        <img src="images/user_img2.png" alt="image user 2">
+        <img src="images/user_img3.png" alt="image user 3">
+    </div>
+
+<footer>
+    <a href="index.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contactus.html">Contact Us</a>
+
+    <div class="social-icons">
+        <a href="https://www.instagram.com/realdonaldtrump/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/realDonaldTrump" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.facebook.com/DonaldTrump/" traget="_blank"><i class="fab fa-facebook"></i></a>
+        <!-- Add more social media icons as needed -->
+    </div>
+
+
+
+    <script>
+        // Custom JavaScript for manual carousel controls
+        const carousel = document.getElementById('myCarousel');
+        const prevButton = carousel.querySelector('.carousel-control-prev');
+        const nextButton = carousel.querySelector('.carousel-control-next');
+
+        prevButton.addEventListener('click', function () {
+            $('#myCarousel').carousel('prev');
+        });
+
+        nextButton.addEventListener('click', function () {
+            $('#myCarousel').carousel('next');
+        });
+    </script>
+    
+    <!-- Add Bootstrap JavaScript and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
